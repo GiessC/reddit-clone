@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 import { IPost } from "../../types/Post";
 import Post from "../../models/Post";
 
-const getPosts = async (req: Request, res: Response): Promise<void> => {
+const getPosts = async (_req: Request, res: Response): Promise<void> => {
     try {
         const posts: IPost[] = await Post.find();
         res.status(200).json({ posts });

@@ -1,12 +1,17 @@
 import express, { Express } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import postRoutes from './routes';
 
 const app: Express = express();
+
+dotenv.config();
 
 const PORT: string | number = process.env.PORT || 4000;
 
 app.use(cors());
+app.use(postRoutes);
 
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@redditclonecluster.no6tx8b.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
 

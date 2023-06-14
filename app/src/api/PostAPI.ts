@@ -10,7 +10,7 @@ export const getPosts = async (): Promise<AxiosResponse<PostApiDataType>> => {
     } catch (error) {
         throw error;
     }
-}
+};
 
 export const createPost = async (
     formData: IPost
@@ -20,7 +20,7 @@ export const createPost = async (
             title: formData.title,
             body: formData.body,
             private: formData.private,
-            creator: 'currentuser',
+            creator: 'currentUser',
         };
         const savePost: AxiosResponse<PostApiDataType> = await axios.post(
             `${baseUrl}/posts`,
