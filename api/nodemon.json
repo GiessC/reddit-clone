@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "api",
+        "MONGO_PASSWORD": "H6GeaI6JxHud3eSN",
+        "MONGO_DB": "reddit-clone"
+    }
+}

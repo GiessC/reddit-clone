@@ -1,3 +1,7 @@
+# Custom
+.history/
+.vscode/
+
 # Logs
 logs
 *.log
