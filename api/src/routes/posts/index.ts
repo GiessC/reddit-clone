@@ -14,6 +14,7 @@ const getPosts = async (_req: Request, res: Response): Promise<void> => {
 const createPost = async (req: Request, res: Response): Promise<void> => {
     try {
         const body = req.body as Pick<IPost, keyof IPost>;
+        console.debug(body);
 
         const post: IPost = new Post({
             title: body.title,
