@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+.button {
+    border: none;
+    border-radius: 5px;
+
+    & .primary {
+        background-color: $primary;
+        color: $primary-text;
+    }
+
+    & .secondary {
+        background-color: $secondary;
+        color: $secondary-text;
+    }
+
+    & .danger {
+        background-color: $error;
+        color: $text-error;
+    }
+    
+    & .small {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    & .medium {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    & .large {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+    
+    & .disabled {
+        background-color: $disabled;
+        color: $disabled-text;
+    }
+}

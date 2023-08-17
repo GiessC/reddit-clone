@@ -1,5 +1,6 @@
 import { IPost } from '../types/Post';
 import { model, Schema } from 'mongoose';
+import User from './User';
 
 const postSchema: Schema = new Schema(
     {
@@ -16,7 +17,7 @@ const postSchema: Schema = new Schema(
             default: false,
         },
         creator: {
-            type: String,
+            type: Schema.Types.ObjectId,
             required: true,
         },
         comments: {

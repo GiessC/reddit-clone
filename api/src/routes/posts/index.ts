@@ -4,8 +4,11 @@ import Post from "../../models/Post";
 
 const getPosts = async (_req: Request, res: Response): Promise<void> => {
     try {
-        const posts: IPost[] = await Post.find();
-        res.status(200).json({ posts });
+        const posts: IPost[] = await Post.find()
+            // .populate('creator', 'username');
+        res
+            .setHeader('Access-Control-Allow-Origin', '*')
+            .status(200).json({ posts });
     } catch (error) {
         throw error;
     }
@@ -27,6 +30,7 @@ const createPost = async (req: Request, res: Response): Promise<void> => {
         const allPosts: IPost[] = await Post.find();
 
         res
+            .setHeader('Access-Control-Allow-Origin', '*')
             .status(201)
             .json({ message: "Post created", post: newPost, posts: allPosts });
     } catch (error) {
@@ -45,11 +49,13 @@ const updatePost = async (req: Request, res: Response): Promise<void> => {
             body
         );
         const allPosts: IPost[] = await Post.find();
-        res.status(200).json({
-            message: 'Post updated',
-            post: updatePost,
-            posts: allPosts,
-        });
+        res
+            .setHeader('Access-Control-Allow-Origin', '*')
+            .status(200).json({
+                message: 'Post updated',
+                post: updatePost,
+                posts: allPosts,
+            });
     } catch (error) {
         throw error;
     }
@@ -61,11 +67,13 @@ const deletePost = async (req: Request, res: Response): Promise<void> => {
             req.params.id,
         );
         const allPosts: IPost[] = await Post.find();
-        res.status(200).json({
-            message: 'Post deleted',
-            post: deletedPost,
-            posts: allPosts,
-        });
+        res
+            .setHeader('Access-Control-Allow-Origin', '*')
+            .status(200).json({
+                message: 'Post deleted',
+                post: deletedPost,
+                posts: allPosts,
+            });
     } catch (error) {
         throw error;
     }

@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.Post {
+    background-color: $light-main-color;
+    max-width: 80%;
+    margin: auto;
+}
+
+.PostHeader {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.PostBody {
+
+}
